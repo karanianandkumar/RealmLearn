@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RealmLearn</string>
+    <string name="hint_name">Name</string>
+</resources>
