@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/input_password"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_name" />
@@ -19,6 +19,8 @@
 
     <Button
         android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />utton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Save"/>
 </LinearLayout>
