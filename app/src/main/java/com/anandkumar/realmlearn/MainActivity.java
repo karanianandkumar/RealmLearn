@@ -8,12 +8,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
+import android.widget.GridView;
 
 import java.util.ArrayList;
 
@@ -26,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Realm realm;
     private ArrayList<String> bookList;
     private ArrayAdapter adapter;
-    private Spinner spinner;
+    private GridView gridView;
     private EditText nameET;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,26 +47,15 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        spinner=(Spinner)findViewById(R.id.spinner);
+        gridView=(GridView) findViewById(R.id.gv);
 
         RealmHelper realmHelper=new RealmHelper(realm);
         bookList=realmHelper.retrieve();
 
         adapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,bookList);
-        spinner.setAdapter(adapter);
+        gridView.setAdapter(adapter);
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
 
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this,bookList.get(i),Toast.LENGTH_SHORT);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
     }
 
     private void displayInputDialog() {
@@ -91,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
                 bookList=helper.retrieve();
                 adapter=new ArrayAdapter(MainActivity.this,android.R.layout.simple_list_item_1,bookList);
-                spinner.setAdapter(adapter);
+                gridView.setAdapter(adapter);
 
             }
         });

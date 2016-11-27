@@ -13,8 +13,8 @@
     tools:context="com.anandkumar.realmlearn.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></Spinner>
+    <GridView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:id="@+id/gv"
+        android:numColumns="3"></GridView>
 </RelativeLayout>
